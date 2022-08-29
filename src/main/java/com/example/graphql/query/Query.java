@@ -1,4 +1,4 @@
-package com.example.graphql.resolver;
+package com.example.graphql.query;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.example.graphql.model.Author;

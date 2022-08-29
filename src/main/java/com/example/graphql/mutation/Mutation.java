@@ -1,4 +1,4 @@
-package com.example.graphql.resolver;
+package com.example.graphql.mutation;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.graphql.model.Author;
