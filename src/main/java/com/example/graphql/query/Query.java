@@ -15,11 +15,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class Query implements GraphQLQueryResolver {
 
-    @Autowired
-    private AuthorRepository authorRepository;
+    private final AuthorRepository authorRepository;
+
+    private final BookRepository bookRepository;
 
     @Autowired
-    private BookRepository bookRepository;
+    public Query(AuthorRepository authorRepository, BookRepository bookRepository) {
+        this.authorRepository = authorRepository;
+        this.bookRepository = bookRepository;
+    }
 
     /**
      * findAllAuthor calls the findAll method from repository
@@ -33,7 +37,7 @@ public class Query implements GraphQLQueryResolver {
      * findAllTutorials calls the findAll method from repository
      * @return iterator of type Book
      */
-    public Iterable<Book> findAllTutorials() {
+    public Iterable<Book> findAllBook() {
         return bookRepository.findAll();
     }
 
@@ -49,7 +53,7 @@ public class Query implements GraphQLQueryResolver {
      * countTutorial calls the count from repository
      * @return long
      */
-    public long countTutorials() {
+    public long countBook() {
         return bookRepository.count();
     }
 }

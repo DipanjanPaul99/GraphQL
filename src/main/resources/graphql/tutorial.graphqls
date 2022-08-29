@@ -1,4 +1,4 @@
-type Tutorial {
+type Book {
 	id: ID!
 	title: String!
 	description: String
@@ -6,12 +6,12 @@ type Tutorial {
 }
 
 extend type Query {
-	findAllTutorials: [Tutorial]!
-	countTutorials: Long!
+	findAllBook: [Book]!
+	countBook: Long!
 }
 
 extend type Mutation {
-	createTutorial(title: String!, description: String, author: ID!): Tutorial!
-	updateTutorial(id: ID!, title: String, description: String, author: ID!): Tutorial!
-	deleteTutorial(id: ID!): Boolean
+	createBook(title: String!, description: String, author: ID!): Book!
+	updateBook(id: ID!, title: String, description: String, author: ID!): Book!
+	deleteBook(id: ID!): Boolean
 }

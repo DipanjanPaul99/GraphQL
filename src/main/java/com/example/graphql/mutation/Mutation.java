@@ -19,11 +19,15 @@ import java.util.Optional;
 @Component
 public class Mutation implements GraphQLMutationResolver {
 
-    @Autowired
-    private AuthorRepository authorRepository;
+    private final AuthorRepository authorRepository;
+
+    private final BookRepository bookRepository;
 
     @Autowired
-    private BookRepository bookRepository;
+    public Mutation(AuthorRepository authorRepository, BookRepository bookRepository) {
+        this.authorRepository = authorRepository;
+        this.bookRepository = bookRepository;
+    }
 
     /**
      * createAuthor method saves the author details
