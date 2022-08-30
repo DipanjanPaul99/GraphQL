@@ -4,7 +4,7 @@ GraphQlApplication
 
 ## Description
 
-Created a project where we can store the Book details along with Authors name with one-to-many relationship.
+Created a project where we can store the Car details along with Owners name with one-to-many relationship.
 
 ## Dependencies
 
