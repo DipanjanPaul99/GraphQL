@@ -1,0 +1,17 @@
+type Owner {
+	id: ID!
+	name: String!
+	occupation: String
+	car: Car
+}
+
+extend type Query {
+	findAllOwner: [Owner]!
+	countOwners: Long!
+}
+
+extend type Mutation {
+	createOwner(name: String!, occupation: String, car: ID!): Owner!
+	updateOwner(id: ID!, name: String, occupation: String, car: ID!): Owner!
+	deleteOwner(id: ID!): Boolean
+}

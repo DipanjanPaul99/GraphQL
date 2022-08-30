@@ -23,33 +23,33 @@ Created our own Query using GraphQL:
 - To read the data use -> Query
 - to write you need to use -> Mutation
 
-Author Schema
+Car Schema
 
-![img_1.png](img_1.png)
+![img_13.png](img_13.png)
 
-Book schema
+Owner Schema
 
-![img_2.png](img_2.png)
+![img_14.png](img_14.png)
 
 ## Query and Response
 
-### Case 1: Create a record for Author
-![img_3.png](img_3.png)
+### Case 1: Create a record for Car
+![img_12.png](img_12.png)
 
-### Case 2: Create a record for Book
-![img_4.png](img_4.png)
+### Case 2: Create a record for Owner
+![img_15.png](img_15.png)
 
-### Case 3: Update record for Book
-![img_5.png](img_5.png)
+### Case 3: Update record for Owner
+![img_16.png](img_16.png)
 
-### Case 4: Deleting a record of Book
-![img_6.png](img_6.png)
+### Case 4: Deleting a record of Owner
+![img_17.png](img_17.png)
 
-### Case 5: Fetch all records of Authors
-![img_7.png](img_7.png)
+### Case 5: Fetch all records of Car
+![img_18.png](img_18.png)
 
-### Case 6: Fetch All Books
-![img_9.png](img_9.png)
+### Case 6: Fetch All Owners
+![img_19.png](img_19.png)
 
-### Case 7: Count total no of Books
-![img_10.png](img_10.png)
+### Case 7: Count total no of Cars
+![img_20.png](img_20.png)

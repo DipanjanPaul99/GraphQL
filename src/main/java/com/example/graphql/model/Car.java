@@ -8,7 +8,7 @@ import javax.persistence.*;
  */
 
 @Entity
-public class Author {
+public class Car {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -19,14 +19,14 @@ public class Author {
 	@Column(name = "age")
 	private Integer age;
 
-	public Author() {
+	public Car() {
 	}
 
-	public Author(Long id) {
+	public Car(Long id) {
 		this.id = id;
 	}
 
-	public Author(String name, Integer age) {
+	public Car(String name, Integer age) {
 		this.name = name;
 		this.age = age;
 	}

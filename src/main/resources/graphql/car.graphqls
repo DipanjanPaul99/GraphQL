@@ -1,0 +1,17 @@
+
+type Car {
+	id: ID!
+	name: String!
+	age: Int
+}
+
+# Root
+type Query {
+	findAllCars: [Car]!
+	countCars: Long!
+}
+
+# Root
+type Mutation {
+	createCar(name: String!, age: Int): Car!
+}

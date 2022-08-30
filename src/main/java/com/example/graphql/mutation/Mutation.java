@@ -1,10 +1,10 @@
 package com.example.graphql.mutation;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
-import com.example.graphql.model.Author;
-import com.example.graphql.model.Book;
-import com.example.graphql.repository.AuthorRepository;
-import com.example.graphql.repository.BookRepository;
+import com.example.graphql.model.Car;
+import com.example.graphql.model.Owner;
+import com.example.graphql.repository.CarRepository;
+import com.example.graphql.repository.OwnerRepository;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,14 +19,14 @@ import java.util.Optional;
 @Component
 public class Mutation implements GraphQLMutationResolver {
 
-    private final AuthorRepository authorRepository;
+    private final CarRepository carRepository;
 
-    private final BookRepository bookRepository;
+    private final OwnerRepository ownerRepository;
 
     @Autowired
-    public Mutation(AuthorRepository authorRepository, BookRepository bookRepository) {
-        this.authorRepository = authorRepository;
-        this.bookRepository = bookRepository;
+    public Mutation(CarRepository carRepository, OwnerRepository ownerRepository) {
+        this.carRepository = carRepository;
+        this.ownerRepository = ownerRepository;
     }
 
     /**
@@ -35,19 +35,19 @@ public class Mutation implements GraphQLMutationResolver {
      * @param age
      * @return the author object
      */
-    public Author createAuthor(String name, Integer age) {
-        return authorRepository.save(new Author(name, age));
+    public Car createCar(String name, Integer age) {
+        return carRepository.save(new Car(name, age));
     }
 
     /**
      * createTutorial method saves the Book Details
-     * @param title
-     * @param description
-     * @param authorId
+     * @param name
+     * @param occupation
+     * @param carId
      * @return the tutorial object
      */
-    public Book createBook(String title, String description, Long authorId) {
-        return bookRepository.save(new Book(title, description, new Author(authorId)));
+    public Owner createOwner(String name, String occupation, Long carId) {
+        return ownerRepository.save(new Owner(name, occupation, carRepository.findById(carId).orElseThrow()));
     }
 
     /**
@@ -55,31 +55,31 @@ public class Mutation implements GraphQLMutationResolver {
      * @param id
      * @return boolean true
      */
-    public boolean deleteBook(Long id) {
-        bookRepository.deleteById(id);
+    public boolean deleteOwner(Long id) {
+        ownerRepository.deleteById(id);
         return true;
     }
 
     /**
      * updateBook method updates the parameter of particular Book
      * @param id
-     * @param title
-     * @param description
-     * @param authorId
+     * @param name
+     * @param occupation
+     * @param carId
      * @return return the Book object
      * @throws NotFoundException
      */
-    public Book updateBook(Long id, String title, String description, Long authorId) throws NotFoundException {
-        Optional<Book> optBook = bookRepository.findById(id);
-        if (optBook.isPresent()) {
-            Book tutorial = optBook.get();
-            if (title != null)
-                tutorial.setTitle(title);
-            if (description != null)
-                tutorial.setDescription(description);
-            if (authorId != null)
-                tutorial.setAuthor(authorRepository.findById(authorId).orElseThrow());
-            return bookRepository.save(tutorial);
+    public Owner updateOwner(Long id, String name, String occupation, Long carId) throws NotFoundException {
+        Optional<Owner> optOwner = ownerRepository.findById(id);
+        if (optOwner.isPresent()) {
+            Owner tutorial = optOwner.get();
+            if (name != null)
+                tutorial.setName(name);
+            if (occupation != null)
+                tutorial.setOccupation(occupation);
+            if (carId != null)
+                tutorial.setCar(carRepository.findById(carId).orElseThrow());
+            return ownerRepository.save(tutorial);
         }
         throw new NotFoundException("Not found Tutorial to update!");
     }
