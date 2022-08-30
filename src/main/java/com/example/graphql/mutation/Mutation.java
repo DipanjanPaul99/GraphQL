@@ -30,7 +30,7 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     /**
-     * createAuthor method saves the author details
+     * createCar method saves the author details
      * @param name
      * @param age
      * @return the author object
@@ -40,7 +40,7 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     /**
-     * createTutorial method saves the Book Details
+     * createOwner method saves the Book Details
      * @param name
      * @param occupation
      * @param carId
@@ -51,7 +51,7 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     /**
-     * deleteBook method deletes the book with particular id
+     * deleteOwner method deletes the book with particular id
      * @param id
      * @return boolean true
      */
@@ -61,12 +61,12 @@ public class Mutation implements GraphQLMutationResolver {
     }
 
     /**
-     * updateBook method updates the parameter of particular Book
+     * updateOwner method updates the parameter of particular Book
      * @param id
      * @param name
      * @param occupation
      * @param carId
-     * @return return the Book object
+     * @return return the Owner object
      * @throws NotFoundException
      */
     public Owner updateOwner(Long id, String name, String occupation, Long carId) throws NotFoundException {

@@ -26,23 +26,23 @@ public class Query implements GraphQLQueryResolver {
     }
 
     /**
-     * findAllAuthor calls the findAll method from repository
-     * @return iterator of type Author
+     * findAllCars calls the findAll method from repository
+     * @return iterator of type Car
      */
     public Iterable<Car> findAllCars() {
         return carRepository.findAll();
     }
 
     /**
-     * findAllTutorials calls the findAll method from repository
-     * @return iterator of type Book
+     * findAllOwner calls the findAll method from repository
+     * @return iterator of type Owner
      */
     public Iterable<Owner> findAllOwner() {
         return ownerRepository.findAll();
     }
 
     /**
-     * countAuthors call the count from repository
+     * countCars call the count from repository
      * @return long
      */
     public long countCars() {
@@ -50,7 +50,7 @@ public class Query implements GraphQLQueryResolver {
     }
 
     /**
-     * countTutorial calls the count from repository
+     * countOwners calls the count from repository
      * @return long
      */
     public long countOwners() {

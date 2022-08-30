@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * BookResolver class implements the GraphQLResolver of type Book
+ * OwnerResolver class implements the GraphQLResolver of type Book
  */
 @Component
 public class OwnerResolver implements GraphQLResolver<Owner> {

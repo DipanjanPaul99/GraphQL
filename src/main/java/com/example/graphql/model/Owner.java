@@ -3,8 +3,7 @@ package com.example.graphql.model;
 import javax.persistence.*;
 
 /**
- *	This Entity class represents the Book data where basic data information are stored(such as title, description and author)
- *	author is mapped to be many to one as one author can write many books
+ *	This Entity class represents the Book data where basic data information are stored(such as name, occupation, car)
  *	@author Dipanjan Paul
  */
 @Entity

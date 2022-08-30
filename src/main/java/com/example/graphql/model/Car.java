@@ -3,7 +3,7 @@ package com.example.graphql.model;
 import javax.persistence.*;
 
 /**
- *	This Entity class where the basic information(such as name, age) of the author is stored.
+ *	This Entity class where the basic information(such as name, age) of the Car.
  *	@author Dipanjan Paul
  */
 
